@@ -26,23 +26,25 @@
 
 
 
+
+
+
 let week = 1
 let fullmoney = 0
-
-
-
 while (fullmoney < 300) {
+    
     alert(`Semana ${week}`)
-    if (fullmoney >= 300) {
-        alert(`Voce tem ${fullmoney} , voce ja pode comprar a bicicleta de 300 reais. Voce demorou ${semana} semanas`)
-        
-    }else if (fullmoney < 300){
         let money = Number(prompt("Digite quanto dinheiro voce ganhou essa semana: ")) 
         if(money <= 0){
             alert("Digite um valor valido!")
         }else {
             alert(`Dinheiro adicionado com sucesso. Agora voce tem: ${fullmoney + money}`)
-            semana++
+            
+            fullmoney = fullmoney + money
+            if (fullmoney >= 300) {
+                alert(`Voce tem ${fullmoney} reais, voce ja pode comprar a bicicleta que custa 300 reais. Voce demorou ${week} semanas`)
+            }else{
+                week++
+            }
         }
-    }
 }
